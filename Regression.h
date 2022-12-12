@@ -36,6 +36,8 @@ class Regression {
 
     void Evaluate();
 
+    double Calculate(double x);
+
   private: 
     int _n;
     double *_x, *_y;

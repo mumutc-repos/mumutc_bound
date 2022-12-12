@@ -67,11 +67,15 @@ void Regression::Evaluate() {
   double sumx2, sumy2;
   double sumxy;
 
-  sumx = this->SumX();
-  sumx2 = this->SumX2();
-  sumy = this->SumY();
-  sumy2 = this->SumY2();
-  sumxy = this->SumXY();
+  sumx = SumX();
+  sumx2 = SumX2();
+  sumy = SumY();
+  sumy2 = SumY2();
+  sumxy = SumXY();
   _b = (_n*sumxy-sumx*sumy)/(_n*sumx2-sumx*sumx);
   _a = (sumy-_b*sumx)/_n;
+}
+
+double Regression::Calculate(double x) {
+  return _a+_b*x;
 }
